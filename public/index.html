@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CarolinaHuddle API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CarolinaHuddle</h1>
+        <p>Panthers Football API</p>
+    </header>
+
+    <main>
+        <h2>Available API Requests</h2>
+        <p>Access Carolina Huddle player information using the requests below.</p>
+
+        <section class="api-card">
+            <h3>All Players</h3>
+            <p><span class="method">GET</span>
+                <a href="/api/players">/api/players</a>
+            </p>
+            <p>Returns the complete list of Panthers players.</p>
+        </section>
+
+        <section class="api-card">
+            <h3>Individual Player</h3>
+            <p><span class="method">GET</span>
+                <a href="/api/players/1">/api/players/:id</a>
+            </p>
+            <p>Returns information about a player using their ID.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; CarolinaHuddle | Keep Pounding</p>
+    </footer>
+</body>
+</html>
