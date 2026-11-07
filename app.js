@@ -11,45 +11,84 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
 
-// Carolina Huddle player data
+// Carolina Huddle Hall of Fame player data
 const players = [
     {
         id: 1,
-        name: "Bryce Young",
-        number: 9,
-        position: "Quarterback",
-        description: "The Panthers' starting quarterback."
+        name: "Steve Smith Sr.",
+        number: 89,
+        position: "Wide Receiver",
+        years: "2001 - 2013",
+        description: "A legendary Panthers receiver known for his toughness, speed, and memorable performances.",
+        img_name: "images/stevesmith.png"
     },
     {
         id: 2,
-        name: "Chuba Hubbard",
-        number: 30,
-        position: "Running Back",
-        description: "A powerful running back for Carolina."
+        name: "Cam Newton",
+        number: 1,
+        position: "Quarterback",
+        years: "2011 - 2019",
+        description: "A dynamic quarterback who became one of the most recognizable players in Panthers history.",
+        img_name: "images/camnewton.png"
     },
     {
         id: 3,
-        name: "Tetairoa McMillan",
-        number: 4,
-        position: "Wide Receiver",
-        description: "A talented young receiving threat."
+        name: "Luke Kuechly",
+        number: 59,
+        position: "Linebacker",
+        years: "2012 - 2019",
+        description: "A dominant linebacker known for his intelligence, tackling ability, and leadership on defense.",
+        img_name: "images/lukekuechly.png"
     },
     {
         id: 4,
-        name: "Jaycee Horn",
-        number: 8,
-        position: "Cornerback",
-        description: "A key part of Carolina's defense."
+        name: "Julius Peppers",
+        number: 90,
+        position: "Defensive End",
+        years: "2002 - 2009",
+        description: "An elite defensive end who became one of the most accomplished defensive players in franchise history.",
+        img_name: "images/juliuspeppers.png"
     },
     {
         id: 5,
-        name: "Derrick Brown",
-        number: 95,
-        position: "Defensive Tackle",
-        description: "A leader on the defensive line."
+        name: "Thomas Davis Sr.",
+        number: 58,
+        position: "Linebacker",
+        years: "2005 - 2018",
+        description: "A respected Panthers linebacker remembered for his leadership, toughness, and dedication to the team.",
+        img_name: "images/thomasdavissr.png"
+    },
+    {
+        id: 6,
+        name: "DeAngelo Williams",
+        number: 34,
+        position: "Running Back",
+        years: "2006 - 2014",
+        description: "A productive running back who provided Carolina with speed and big-play ability out of the backfield.",
+        img_name: "images/deangelowilliams.png"
+    },
+    {
+        id: 7,
+        name: "Jordan Gross",
+        number: 69,
+        position: "Offensive Tackle",
+        years: "2003 - 2013",
+        description: "A dependable offensive tackle who protected Panthers quarterbacks for more than a decade.",
+        img_name: "images/jordangross.png"
+    },
+    {
+        id: 8,
+        name: "Greg Olsen",
+        number: 88,
+        position: "Tight End",
+        years: "2011 - 2019",
+        description: "A reliable tight end who became one of Carolina's most important receiving targets.",
+        img_name: "images/gregolsen.png"
     }
 ];
 
@@ -89,3 +128,4 @@ mongoose
     .catch((err) => {
         console.error("Could not connect to MongoDB:", err);
     });
+
